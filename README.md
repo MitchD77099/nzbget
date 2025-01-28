@@ -13,7 +13,7 @@ First make sure that you have a [working cross-compiling VM](https://github.com/
 Log in the VM, pick a temporary folder (e.g., `~/build`), and then do:
 
 ```
-git clone https://github.com/droboports/nzbget.git
+git clone https://github.com/MitchD77099/nzbget.git
 cd nzbget
 ./build.sh
 ls -la *.tgz
