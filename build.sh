@@ -28,7 +28,7 @@ export DEST="${BUILD_DEST:-/mnt/DroboFS/Shares/DroboApps/${NAME}}"
 export DEPS="${PWD}/target/install"
 export CFLAGS="${CFLAGS:-} -Os -fPIC"
 export CXXFLAGS="${CXXFLAGS:-} ${CFLAGS}"
-export CPPFLAGS="-I${DEPS}/include"
+export CPPFLAGS="-I${DEPS}/include -I/home/drobo/xtools/toolchain/arm-drobo_x86_64-linux-gnueabi/arm-drobo_x86_64-linux-gnueabi/usr/include -I/home/drobo/xtools/toolchain/arm-drobo_x86_64-linux-gnueabi/arm-drobo_x86_64-linux-gnueabi/include"
 export LDFLAGS="${LDFLAGS:-} -Wl,-rpath,${DEST}/lib -L${DEST}/lib"
 alias make="make -j4 V=1 VERBOSE=1"
 
