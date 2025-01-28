@@ -29,7 +29,7 @@ export DEPS="${PWD}/target/install"
 export CFLAGS="${CFLAGS:-} -Os -fPIC"
 export CXXFLAGS="${CXXFLAGS:-} ${CFLAGS}"
 export CPPFLAGS="-I${DEPS}/include -I/home/drobo/xtools/toolchain/arm-drobo_x86_64-linux-gnueabi/arm-drobo_x86_64-linux-gnueabi/usr/include -I/home/drobo/xtools/toolchain/arm-drobo_x86_64-linux-gnueabi/arm-drobo_x86_64-linux-gnueabi/include"
-export LDFLAGS="${LDFLAGS:-} -Wl,-rpath,${DEST}/lib -L${DEST}/lib"
+export LDFLAGS="${LDFLAGS:-} -Wl,-rpath,${DEST}/lib -L${DEST}/lib -L/home/drobo/xtools/toolchain/arm-drobo_x86_64-linux-gnueabi/arm-drobo_x86_64-linux-gnueabi/lib"
 alias make="make -j4 V=1 VERBOSE=1"
 
 ### support functions ###
