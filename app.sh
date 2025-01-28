@@ -8,7 +8,7 @@ local URL="http://www.rarlab.com/rar/${FILE}"
 _download_tgz "${FILE}" "${URL}" "${FOLDER}"
 pushd target/"${FOLDER}"
 mv makefile Makefile
-make CXX="${CXX}" CXXFLAGS="${CFLAGS} -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE" STRIP="${STRIP}" LDFLAGS="${LDFLAGS} -pthread"
+make CXX="${CXX}" CXXFLAGS="${CFLAGS} -I/home/drobo/xtools/toolchain/5n/arm-marvell-linux-gnueabi/libc/thumb2/usr/include/bits/ -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE" STRIP="${STRIP}" LDFLAGS="${LDFLAGS} -pthread"
 make install DESTDIR="${DEST}"
 mkdir -p "${DEST}/libexec"
 mv "${DEST}/bin/unrar" "${DEST}/libexec/"
