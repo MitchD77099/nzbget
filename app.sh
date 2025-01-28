@@ -32,7 +32,7 @@ popd
 
 ### ZLIB ###
 _build_zlib() {
-local VERSION="1.2.8"
+local VERSION="1.3.1"
 local FOLDER="zlib-${VERSION}"
 local FILE="${FOLDER}.tar.gz"
 local URL="http://zlib.net/${FILE}"
@@ -130,10 +130,10 @@ popd
 
 ### NZBGET ###
 _build_nzbget() {
-local VERSION="16.4"
+local VERSION="24.5"
 local FOLDER="nzbget-${VERSION}"
 local FILE="${FOLDER}-src.tar.gz"
-local URL="https://github.com/nzbget/nzbget/releases/download/v${VERSION}/${FILE}"
+local URL="https://github.com/nzbgetcom/nzbget/releases/download/v${VERSION}/${FILE}"
 
 _download_tgz "${FILE}" "${URL}" "${FOLDER}"
 pushd "target/${FOLDER}"
