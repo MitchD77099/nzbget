@@ -141,12 +141,6 @@ _download_tgz "${FILE}" "${URL}" "${FOLDER}"
 pushd "target/${FOLDER}"
 mkdir build
 pushd "build"
-export CC="/home/drobo/xtools/toolchain/arm-gnu-toolchain-14.2.rel1-x86_64-arm-none-eabi/arm-gnu-toolchain-14.2.rel1-x86_64-arm-none-eabi/bin/arm-none-eabi-gcc"
-export CXX="/home/drobo/xtools/toolchain/arm-gnu-toolchain-14.2.rel1-x86_64-arm-none-eabi/arm-gnu-toolchain-14.2.rel1-x86_64-arm-none-eabi/bin/arm-none-eabi-g++"
-export AR="/home/drobo/xtools/toolchain/arm-gnu-toolchain-14.2.rel1-x86_64-arm-none-eabi/arm-gnu-toolchain-14.2.rel1-x86_64-arm-none-eabi/bin/arm-none-eabi-ar"
-export AS="/home/drobo/xtools/toolchain/arm-gnu-toolchain-14.2.rel1-x86_64-arm-none-eabi/arm-gnu-toolchain-14.2.rel1-x86_64-arm-none-eabi/bin/arm-none-eabi-as"
-export RANLIB="/home/drobo/xtools/toolchain/arm-gnu-toolchain-14.2.rel1-x86_64-arm-none-eabi/arm-gnu-toolchain-14.2.rel1-x86_64-arm-none-eabi/bin/arm-none-eabi-ranlib"
-export STRIP="/home/drobo/xtools/toolchain/arm-gnu-toolchain-14.2.rel1-x86_64-arm-none-eabi/arm-gnu-toolchain-14.2.rel1-x86_64-arm-none-eabi/bin/arm-none-eabi-strip"
 cmake .. -DCMAKE_INSTALL_PREFIX="${DEST}"
 #./configure --host="${HOST}" --prefix="${DEST}" \
 #  --with-zlib-includes="${DEPS}/include" --with-zlib-libraries="${DEST}/lib" \
