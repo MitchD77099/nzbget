@@ -51,7 +51,8 @@ _build_openssl() {
 local VERSION="1.0.2d"
 local FOLDER="openssl-${VERSION}"
 local FILE="${FOLDER}.tar.gz"
-local URL="http://mirror.switch.ch/ftp/mirror/openssl/source/old/1.0.2/${FILE}"
+#local URL="http://mirror.switch.ch/ftp/mirror/openssl/source/old/1.0.2/${FILE}"
+local URL="https://github.com/openssl/openssl/releases/download/OpenSSL_1_0_2d/${FILE}"
 
 _download_tgz "${FILE}" "${URL}" "${FOLDER}"
 cp -vf "src/${FOLDER}-parallel-build.patch" "target/${FOLDER}/"
