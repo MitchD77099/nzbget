@@ -141,15 +141,18 @@ _download_tgz "${FILE}" "${URL}" "${FOLDER}"
 pushd "target/${FOLDER}"
 mkdir build
 pushd "build"
-cmake ..
-./configure --host="${HOST}" --prefix="${DEST}" \
-  --with-zlib-includes="${DEPS}/include" --with-zlib-libraries="${DEST}/lib" \
-  --with-tlslib=OpenSSL --with-openssl-includes="${DEPS}/include" --with-openssl-libraries="${DEST}/lib" \
-  --with-libcurses-includes="${DEPS}/include" --with-libcurses-libraries="${DEST}/lib" \
-  --with-libxml2-includes="${DEPS}/include/libxml2" --with-libxml2-libraries="${DEST}/lib"
+cmake .. -DCMAKE_INSTALL_PREFIX="${DEST}"
+#./configure --host="${HOST}" --prefix="${DEST}" \
+#  --with-zlib-includes="${DEPS}/include" --with-zlib-libraries="${DEST}/lib" \
+#  --with-tlslib=OpenSSL --with-openssl-includes="${DEPS}/include" --with-openssl-libraries="${DEST}/lib" \
+#  --with-libcurses-includes="${DEPS}/include" --with-libcurses-libraries="${DEST}/lib" \
+#  --with-libxml2-includes="${DEPS}/include/libxml2" --with-libxml2-libraries="${DEST}/lib"
 
-make
-make install
+#make
+#make install
+cmake --build .
+cmake --install
+#popd
 mv -v "${DEST}/share/nzbget/webui" "${DEST}/app"
 mv -v "${DEST}/share/nzbget/nzbget.conf" "${DEST}/etc/nzbget.conf.default"
 sed -e "s|^MainDir=.*|MainDir=/mnt/DroboFS/Shares/Public/Downloads|g" \
