@@ -134,7 +134,8 @@ _build_nzbget() {
 local VERSION="24.5"
 local FOLDER="nzbget-${VERSION}"
 local FILE="${FOLDER}-src.tar.gz"
-local URL="https://github.com/nzbgetcom/nzbget/releases/download/v${VERSION}/${FILE}"
+#local URL="https://github.com/nzbgetcom/nzbget/releases/download/v${VERSION}/${FILE}"
+local URL="https://github.com/nzbgetcom/nzbget/archive/refs/tags/v24.5.tar.gz"
 
 _download_tgz "${FILE}" "${URL}" "${FOLDER}"
 pushd "target/${FOLDER}"
